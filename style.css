@@ -1,0 +1,15 @@
+.btnClass {
+    height: 40px;
+    width: 40px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.btnClass > button {
+    width: 60px;
+    height: 60px;
+    /* border: 4px solid darkslategray; */
+    /* background: skyblue; */
+}

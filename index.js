@@ -1,3 +1,6 @@
+let playerScore = 0;
+let compScore = 0;
+
 function getComputerChoice() {
     let arr = ["rock", "paper", "scissors"];
     let choice = Math.floor(Math.random()*3);
@@ -5,16 +8,18 @@ function getComputerChoice() {
 }
 
 function winnerCC(cc, pc) {
+    compScore++;
     console.log(`You Lose! ${cc} beats ${pc}`);
 }
 
 function winnerPC(cc, pc) {
+    playerScore++;
     console.log(`You Won! ${pc} beats ${cc}`);
 }
+// pc = player's choice
 
-function playRound() {
-    let pc = prompt("Enter your choice"); // player choice (pc)
-    pc = pc.toLowerCase();
+function playRound(pc) {
+
     let cc = getComputerChoice(); //computer choice
     
     let ans = true;
@@ -27,6 +32,7 @@ function playRound() {
                 (cc === "paper" && pc === "rock")   ):
             
             winnerCC(cc,pc);
+            // checkScore(playerScore, compScore);
             break;
     
         case ( (cc != "rock") && (cc != "paper") && (cc != "scissors") 
@@ -40,4 +46,23 @@ function playRound() {
     }
 }
 
-for (let i = 0; i < 5; i++) playRound();
+// for (let i = 0; i < 5; i++) playRound();
+
+
+let rock_btn = document.getElementById('rock');
+let paper_btn = document.getElementById('paper');
+let scissors_btn = document.getElementById('scissors');
+
+console.log(rock_btn);
+
+rock_btn.addEventListener('click', function(){
+    playRound('rock');
+});
+
+paper_btn.addEventListener('click', function(){
+    playRound('paper');
+});
+
+scissors_btn.addEventListener('click', function(){
+    playRound('scissors');
+});
