@@ -7,6 +7,7 @@ let rock_btn = document.getElementById('rock');
 let paper_btn = document.getElementById('paper');
 let scissors_btn = document.getElementById('scissors');
 let currChoiceContainer = document.getElementById('currChoice');
+let currWin = document.getElementById('currWin');
 
 const scoreContainer = document.getElementById('score');
 
@@ -40,6 +41,7 @@ function playRound(pc) {
         //? case for tie
         case (pc === cc):
             winner = 'tie';
+            currWin.textContent = '\n Its a Tie'
             break;
 
         //? case for computer win
@@ -47,11 +49,13 @@ function playRound(pc) {
                 (cc === "scissors" && pc === "paper") ||
                 (cc === "paper" && pc === "rock")   ):
             winner = 'comp';
+            currWin.textContent = '\n Computer won this'
             break;
 
         //? case for player win
         default:
             winner = 'player';
+            currWin.textContent = '\n You won this'
     }
     scoreWinner();
     console.log(winner);
