@@ -8,7 +8,6 @@ let paper_btn = document.getElementById('paper');
 let scissors_btn = document.getElementById('scissors');
 
 const scoreContainer = document.getElementById('score');
-const finalWinContainer = document.getElementById('finalWin');
 
 
 rock_btn.addEventListener('click', function(){
@@ -71,18 +70,23 @@ function scoreWinner() {
 }
 
 function getWinner() {
+    let final = '';
     switch(true) {
         case (compScore === 5):
+            scoreContainer.textContent += '\n' + 'Computer wins';
             console.log('computer wins');
             break;
+
+
         case (playerScore === 5):
-            console.log('player wins');
+            scoreContainer.textContent += '\n' + 'You win';
+            console.log(' wins');
             break;
+
+
         default:
             console.log('nice');
     }
-    let final = compScore == 5 ?"computer wins":"player wins";
-    finalWinContainer.textContent += '\n' + final;
     compScore = 0;
     playerScore = 0;
 }
