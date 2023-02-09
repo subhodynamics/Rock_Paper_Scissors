@@ -6,6 +6,7 @@ let finalWinner = '';
 let rock_btn = document.getElementById('rock');
 let paper_btn = document.getElementById('paper');
 let scissors_btn = document.getElementById('scissors');
+let currChoiceContainer = document.getElementById('currChoice');
 
 const scoreContainer = document.getElementById('score');
 
@@ -31,6 +32,8 @@ function getComputerChoice() {
 // pc = player's choice
 function playRound(pc) {
     let cc = getComputerChoice(); //computer choice
+    
+    currChoiceContainer.textContent = `\nYou chose ${pc}\nand Computer chosen ${cc}`;
     
     switch (true) {
 
