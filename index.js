@@ -33,9 +33,9 @@ function getComputerChoice() {
 // pc = player's choice
 function playRound(pc) {
     let cc = getComputerChoice(); //computer choice
-    
+
     currChoiceContainer.textContent = `\nYou chose ${pc}\nand Computer chosen ${cc}`;
-    
+
     switch (true) {
 
         //? case for tie
@@ -78,21 +78,15 @@ function scoreWinner() {
 
 function getWinner() {
     let final = '';
-    switch(true) {
-        case (compScore === 5):
-            scoreContainer.textContent += '\n' + 'Computer wins';
-            console.log('computer wins');
-            break;
-
-
-        case (playerScore === 5):
-            scoreContainer.textContent += '\n' + 'You win';
-            console.log(' wins');
-            break;
-
-
-        default:
-            console.log('nice');
+    if(compScore === 5)
+    {
+        scoreContainer.textContent += '\n' + 'Computer wins';
+        console.log('computer wins');
+    }
+    else
+    {
+        scoreContainer.textContent += '\n' + 'You win';
+        console.log(' wins');
     }
     compScore = 0;
     playerScore = 0;
