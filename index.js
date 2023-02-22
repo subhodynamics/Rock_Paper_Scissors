@@ -77,7 +77,6 @@ function scoreWinner() {
 }
 
 function getWinner() {
-    let final = '';
     if(compScore === 5)
     {
         scoreContainer.textContent += '\n' + 'Computer wins';
