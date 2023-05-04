@@ -30,6 +30,11 @@ h1 {
     background: #05386B;
 }
 
+.btnClass > button:hover {
+    background: #105fae;
+    border: 2px solid white;
+}
+
 #score {
     color: black;
     text-align: center;
