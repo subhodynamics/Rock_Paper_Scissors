@@ -32,6 +32,7 @@ h1 {
 
 .btnClass > button:hover {
     background: #105fae;
+    border: 2px solid white;
 }
 
 #score {
